@@ -1,52 +1,30 @@
 # credit-risk-classification
-UT Module 20
+# Module 20 Report
 
-The instructions for this Challenge are divided into the following subsections:
+## Overview of the Analysis
 
-Split the Data into Training and Testing Sets
+In this module, we looked at lending data and sought to apply logistic regression to predict 'healthy' vs 'high risk' loans. 
+The data set included variables such as: loan size, interest rate, debt:income and total debt. The data had a total of just over 77.5k loans, of which 2,500 were 'high risk'. In order to perform the logistic regression the data was split into training and test sets using both stratified sampling (Model 1) as well as random oversampling (Model 2). 
 
-Create a Logistic Regression Model with the Original Data
+## Results
 
-Predict a Logistic Regression Model with Resampled Training Data
+The results were as follows for each model:
 
-Write a Credit Risk Analysis Report
+* Model 1: Stratified Sampling
+  * Accuracy: 99.24%
+  * Balanced Accuracy: 94.42% 
+  * Precision: 99.64%
+  * Recall: 87.46%
 
-Split the Data into Training and Testing Sets
-Open the starter code notebook and use it to complete the following steps:
+* Model 2: Random Oversampling
+  * Accuracy: 99.52%
+  * Balanced Accuracy: 99.60%
+  * Precision: 99.99% 
+  * Recall: 87.25%
 
-Read the lending_data.csv data from the Resources folder into a Pandas DataFrame.
 
-Create the labels set (y) from the “loan_status” column, and then create the features (X) DataFrame from the remaining columns.
+## Summary
 
-NOTE
-A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting.
+Overall, Model 2 performs better in terms of both accuracy and precision. Model 2 improves on the precision versus Model 1, meaning the lender can be more certain of the healthy loans in their portfolio and the characteristics of healthy loans for prospective lenders in the future - this will increase profits! Unfortunately, Model 2 has a slightly lower recall (meaning it is more likely to misclassify 'high risk' loans) but the difference is relatively small versus Model 1. 
 
-Split the data into training and testing datasets by using train_test_split.
 
-Create a Logistic Regression Model with the Original Data
-Use your knowledge of logistic regression to complete the following steps:
-
-Fit a logistic regression model by using the training data (X_train and y_train).
-
-Save the predictions for the testing data labels by using the testing feature data (X_test) and the fitted model.
-
-Evaluate the model’s performance by doing the following:
-
-Calculate the accuracy score of the model.
-
-Generate a confusion matrix.
-
-Print the classification report.
-
-Answer the following question: How well does the logistic regression model predict both the 0 (healthy loan) and 1 (high-risk loan) labels?
-
-Write a Credit Risk Analysis Report
-Write a brief report that includes a summary and analysis of the performance of the machine learning models that you used in this homework. You should write this report as the README.md file included in your GitHub repository.
-
-Structure your report by using the report template that Starter_Code.zip includes, ensuring that it contains the following:
-
-An overview of the analysis: Explain the purpose of this analysis.
-
-The results: Using a bulleted list, describe the accuracy score, the precision score, and recall score of the machine learning model.
-
-A summary: Summarize the results from the machine learning model. Include your justification for recommending the model for use by the company. If you don’t recommend the model, justify your reasoning.
